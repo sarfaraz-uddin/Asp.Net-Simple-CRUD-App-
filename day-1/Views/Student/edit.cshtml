@@ -1,0 +1,12 @@
+﻿@model student;
+
+<form asp-action="edit" asp-controller="Student" method="Post">
+    @* <input name="Id" value="@Model.Id" hidden/> *@
+    <label>Name</label>
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    <label>Age</label>
+    <input type="number" name="age" class="form-control" value="@Model.Age"/>
+    <label>Gender</label>
+    <input type="text" name="gender" class="form-control" value="@Model.Gender"/>
+    <button type="submit" class="btn btn-dark m-2">Edit</button>
+</form>

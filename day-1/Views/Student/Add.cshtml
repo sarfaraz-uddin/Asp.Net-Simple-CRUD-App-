@@ -1,0 +1,11 @@
+﻿<form asp-action="add" asp-controller="Student" enctype="multipart/form-data" method="Post">
+    <label>Name</label>
+    <input type="text" name="Name" class="form-control" />
+    <label>Age</label>
+    <input type="number" name="age" class="form-control" />
+    <label>Gender</label>
+    <input type="text" name="gender" class="form-control" />
+    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+    <input class="form-control"  name="imageFile" type="file" id="formFileMultiple" multiple />
+    <button type="submit" class="btn btn-success m-2">Add</button>
+</form>

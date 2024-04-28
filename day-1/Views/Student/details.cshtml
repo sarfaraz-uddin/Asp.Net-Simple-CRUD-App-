@@ -1,0 +1,12 @@
+﻿@model student;
+
+<form asp-action="details" asp-controller="Student" method="Get">
+    @* <input name="Id" value="@Model.Id" hidden/> *@
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" value="@Model.Name" readonly/>
+    <label>Age</label>
+    <input type="number" name="age" class="form-control" value="@Model.Age" readonly/>
+    <label>Gender</label>
+    <input type="text" name="gender" class="form-control" value="@Model.Gender" readonly/>
+</form>
+

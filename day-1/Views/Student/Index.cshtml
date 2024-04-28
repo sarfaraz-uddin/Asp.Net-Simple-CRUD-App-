@@ -1,0 +1,51 @@
+﻿@model List<student>
+@{
+    int sn = 1;
+}
+
+<style>
+    img{
+        width:200px;
+        height:200px;
+    }
+</style>
+
+<h1>List of Students</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Photo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>@(sn++)</td>
+                <td>@(data.Name)</td>
+                <td>@(data.Age)</td>
+                <td>@(data.Gender)</td>
+                <td>
+                    @if (data.Imagedata != null && data.Imagedata.Length > 0)
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(data.Imagedata)" class="rounded-circle" alt="Image" />
+                    }
+                    else
+                    {
+                        <span>No image</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="edit" asp-controller="Student" asp-route-id="@(data.Id)" class="btn btn-warning">Edit</a>
+                    <a asp-action="delete" asp-controller="Student" class="btn btn-danger" asp-route-id="@(data.Id)">Delete</a>
+                    <a asp-action="details" asp-controller="Student" asp-route-id="@(data.Id)" class="btn btn-info">Details</a>
+                </td>    
+            </tr>
+        }
+    </tbody>
+</table>
